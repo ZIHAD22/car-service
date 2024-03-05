@@ -6,7 +6,12 @@ const CarouselItem = ({ img, heading, subHeading }) => {
         backgroundImage: `url(${img})`,
       }}
     >
-      <div className="bg-[black] h-full opacity-70 text-[white]">
+      <div
+        className="h-full opacity-90 text-[white]"
+        style={{
+          background: "linear-gradient(to left, #ffffff00 0%, black 65%)",
+        }}
+      >
         <div className="w-1/2 p-20">
           <h1 className="text-6xl mb-14">{heading}</h1>
           <p className="mb-8">{subHeading}</p>
