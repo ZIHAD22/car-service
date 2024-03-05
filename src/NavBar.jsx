@@ -1,4 +1,27 @@
+import CustomNavLink from "./Shared/CustomNavLink/CustomNavLink";
+import logo from "../src/assets/logo.svg";
+
 const NavBar = () => {
+  const menuItem = (
+    <>
+      <li className="mx-2">
+        <CustomNavLink to="/">Home</CustomNavLink>
+      </li>
+      <li className="mx-2">
+        <CustomNavLink to="/">About</CustomNavLink>
+      </li>
+      <li className="mx-2">
+        <CustomNavLink to="/">Service</CustomNavLink>
+      </li>
+      <li className="mx-2">
+        <CustomNavLink to="/">Blog</CustomNavLink>
+      </li>
+      <li className="mx-2">
+        <CustomNavLink to="/">Contact</CustomNavLink>
+      </li>
+    </>
+  );
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -21,54 +44,22 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {menuItem}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <CustomNavLink to="/">
+          <div className="w-[70%]">
+            <img src={logo} alt="" />
+          </div>
+        </CustomNavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-        </ul>
+        <ul className="menu-horizontal px-1 font-bold">{menuItem}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <a className="btn btn-outline border-main text-main">Appointment</a>
       </div>
     </div>
   );
