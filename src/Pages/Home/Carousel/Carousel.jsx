@@ -11,7 +11,7 @@ import CarouselItem from "./CarouselItem";
 
 const Carousel = () => {
   return (
-    <div className="w-[90%] mx-auto my-8 rounded-2xl overflow-hidden relative z-0">
+    <div className="my-8 rounded-2xl overflow-hidden relative z-0">
       <Swiper
         // pagination={{
         //   type: "fraction",
